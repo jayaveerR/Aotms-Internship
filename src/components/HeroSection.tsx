@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, Users, Award, Clock } from "lucide-react";
 import { CountUpNumber } from "./CountUpNumber";
-import heroStudent from "@/assets/hero-student.jpg";
+import heroStudent from "@/assets/hero-student.png";
 
 const trustStats = [
   { icon: Users, value: 2000, suffix: "+", label: "Students Trained" },
@@ -37,12 +37,13 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground leading-tight"
             >
-              Become{" "}
-              <span className="text-primary">Job-Ready</span>
+              Become <span className="text-primary">Job-Ready</span> in <span className="text-accent">90 Days</span>
               <br />
-              in <span className="text-accent">90 Days</span>
+              <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-foreground/80">
+                with Expert-Led IT Training Vijayawada
+              </span>
             </motion.h1>
 
             {/* Subheading */}
@@ -50,7 +51,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed"
+              className="text-sm md:text-base text-muted-foreground max-w-md leading-relaxed"
             >
               AI, Cloud, DevOps & Full Stack Courses with Real-World Projects 
               and Placement Support from Industry Experts.
