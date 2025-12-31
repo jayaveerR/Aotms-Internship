@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PlayCircle, Users, Award, Clock } from "lucide-react";
-import { HeroVisual } from "./HeroVisual";
 import { CountUpNumber } from "./CountUpNumber";
+import heroStudent from "@/assets/hero-student.jpg";
 
 const trustStats = [
   { icon: Users, value: 2000, suffix: "+", label: "Students Trained" },
@@ -11,11 +11,11 @@ const trustStats = [
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-screen pt-28 pb-16 overflow-hidden">
+    <section className="relative min-h-screen pt-32 md:pt-36 pb-16 overflow-hidden bg-background">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left Content */}
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
             {/* Floating Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -23,12 +23,12 @@ export const HeroSection = () => {
               transition={{ duration: 0.5 }}
             >
               <motion.span
-                animate={{ y: [0, -8, 0] }}
+                animate={{ y: [0, -6, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 className="hero-badge inline-flex"
               >
                 <span className="w-2 h-2 bg-accent rounded-full animate-pulse-soft" />
-                <span>Trusted IT Training Institute</span>
+                <span>Expert-Led IT Training in Vijayawada</span>
               </motion.span>
             </motion.div>
 
@@ -37,7 +37,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground leading-tight"
             >
               Become{" "}
               <span className="text-primary">Job-Ready</span>
@@ -50,7 +50,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed"
+              className="text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed"
             >
               AI, Cloud, DevOps & Full Stack Courses with Real-World Projects 
               and Placement Support from Industry Experts.
@@ -64,7 +64,7 @@ export const HeroSection = () => {
               className="flex flex-col sm:flex-row gap-4"
             >
               <button className="btn-primary group flex items-center justify-center gap-2">
-                Explore Courses
+                Start Learning Now
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="btn-secondary group flex items-center justify-center gap-2">
@@ -73,19 +73,29 @@ export const HeroSection = () => {
               </button>
             </motion.div>
 
+            {/* Tagline */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="text-sm text-muted-foreground italic"
+            >
+              Start Your Education Journey, <span className="text-primary font-medium">For a Better Future</span>
+            </motion.p>
+
             {/* Trust Indicators */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-wrap gap-8 md:gap-12 pt-8 border-t border-border"
+              transition={{ duration: 0.6, delay: 1 }}
+              className="flex flex-wrap gap-6 md:gap-10 pt-6 border-t border-border"
             >
               {trustStats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+                  transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                   className="trust-stat"
                 >
                   <div className="flex items-center gap-2 mb-1">
@@ -100,14 +110,97 @@ export const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Right Visual */}
+          {/* Right Visual - Student Image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative flex justify-center lg:justify-end"
           >
-            <HeroVisual />
+            {/* Decorative Elements */}
+            <div className="absolute -top-8 -right-8 w-32 h-32 bg-accent/10 rounded-full blur-2xl" />
+            <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-primary/10 rounded-full blur-2xl" />
+            
+            {/* Decorative Shapes */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute top-10 right-10 w-16 h-16"
+            >
+              <svg viewBox="0 0 100 100" className="w-full h-full text-primary/20">
+                <path
+                  d="M50 5 L55 45 L95 50 L55 55 L50 95 L45 55 L5 50 L45 45 Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-20 left-0 lg:left-10"
+            >
+              <div className="w-4 h-4 bg-accent/30 rounded-full" />
+            </motion.div>
+
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute bottom-20 right-0"
+            >
+              <svg className="w-12 h-6 text-primary/30" viewBox="0 0 48 24">
+                <path
+                  d="M0 12 Q12 0 24 12 Q36 24 48 12"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                />
+              </svg>
+            </motion.div>
+
+            {/* Main Image Container */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10"
+            >
+              <img
+                src={heroStudent}
+                alt="Student learning on laptop"
+                className="w-full max-w-md lg:max-w-lg xl:max-w-xl object-contain drop-shadow-2xl"
+              />
+
+              {/* Floating Stats Card */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="absolute -left-4 lg:-left-8 bottom-20 bg-card rounded-2xl shadow-xl p-4 border border-border"
+              >
+                <div className="flex items-center gap-3">
+                  {/* Avatar Group */}
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3, 4].map((i) => (
+                      <div
+                        key={i}
+                        className="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent border-2 border-card flex items-center justify-center text-xs font-bold text-primary-foreground"
+                      >
+                        {String.fromCharCode(64 + i)}
+                      </div>
+                    ))}
+                    <div className="w-8 h-8 rounded-full bg-accent border-2 border-card flex items-center justify-center text-xs font-bold text-foreground">
+                      2K+
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-lg font-bold text-foreground">
+                      <CountUpNumber end={2000} suffix="+" />
+                    </p>
+                    <p className="text-xs text-muted-foreground">Total Enrolled Students</p>
+                  </div>
+                </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

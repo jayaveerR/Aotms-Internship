@@ -47,10 +47,18 @@ export const Header = () => {
         isScrolled ? "shadow-lg" : ""
       }`}
     >
-      {/* Top Bar */}
-      <div className={`bg-primary text-primary-foreground text-xs transition-all duration-300 ${
-        isScrolled ? "py-1.5" : "py-2"
-      } hidden md:block`}>
+      {/* Top Bar - Hidden on scroll */}
+      <motion.div 
+        initial={{ height: "auto", opacity: 1 }}
+        animate={{ 
+          height: isScrolled ? 0 : "auto", 
+          opacity: isScrolled ? 0 : 1,
+          paddingTop: isScrolled ? 0 : undefined,
+          paddingBottom: isScrolled ? 0 : undefined
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="bg-primary text-primary-foreground text-xs py-2 hidden md:block overflow-hidden"
+      >
         <div className="container mx-auto px-6 flex items-center justify-between">
           {/* Left - Contact Info */}
           <div className="flex items-center gap-5">
@@ -103,7 +111,7 @@ export const Header = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Navbar */}
       <nav className={`bg-background/95 backdrop-blur-md transition-all duration-300 border-b border-border/50 ${
