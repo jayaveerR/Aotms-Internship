@@ -13,6 +13,9 @@ import Contact from "./pages/Contact";           // New
 import Blog from "./pages/Blog";                 // New
 import Placements from "./pages/Placements";     // New
 
+import Chatbot from "./components/Chatbot"; // Import Chatbot
+import "./components/Chatbot.css"; // Import Chatbot CSS
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -35,6 +38,7 @@ const App = () => (
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
+    <Chatbot /> {/* Render Chatbot here */}
   </QueryClientProvider>
 );
 
